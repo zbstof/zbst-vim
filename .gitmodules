@@ -34,3 +34,9 @@
 [submodule "vimfiles/bundle/open-browser.vim"]
 	path = vimfiles/bundle/open-browser.vim
 	url = git://github.com/tyru/open-browser.vim.git
+[submodule "vimfiles/bundle/pyflakes-vim"]
+	path = vimfiles/bundle/pyflakes-vim
+	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "vimfiles/bundle/syntastic"]
+	path = vimfiles/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git

@@ -1,0 +1,13 @@
+backup/*
+swap/*
+undo/*
+.netrwhist
+!.gitignore
+*.zip
+vim73/*
+README
+vimfiles/doc/tags
+vimfiles/doc/tags-ja
+vimfiles/bundle/*/docs/tags
+vimfiles/bundle/*/docs/tags-ja
+vimfiles/spell/*

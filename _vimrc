@@ -37,10 +37,10 @@ endif
 
 "Makes gui the way I like it
 if has("gui_running")
-    colorscheme zenburn
+    "colorscheme zenburn
 
-    "set background=dark
-    "colorscheme solarized
+    set background=dark
+    colorscheme solarized
     "Muck with gvim interface
     "remove toolbar
     set guioptions-=T
@@ -226,6 +226,8 @@ nnoremap <Leader><Space> :nohlsearch<CR>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 "trim whitespace
 nnoremap <Leader>W :%s/\s\+$//<CR>
+"Change encoding to utf-16le (for log files)
+nnoremap <Leader>log :e ++enc=utf-16le<CR>
 
 "Up and down are more logical with g - wrapped lines count
 nnoremap k gk

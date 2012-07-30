@@ -45,7 +45,15 @@
 [submodule "vimfiles/bundle/yankring"]
 	path = vimfiles/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
-    ignore = dirty
 [submodule "vimfiles/bundle/vim-fuzzyfinder"]
 	path = vimfiles/bundle/vim-fuzzyfinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
+[submodule "vimfiles/bundle/vim-l9"]
+	path = vimfiles/bundle/vim-l9
+	url = https://github.com/vim-scripts/L9
+[submodule "vimfiles/bundle/bufkill"]
+	path = vimfiles/bundle/bufkill
+	url = https://github.com/vim-scripts/bufkill.vim
+[submodule "vimfiles/bundle/matchit"]
+	path = vimfiles/bundle/matchit
+	url = git://github.com/Kris2k/matchit.git

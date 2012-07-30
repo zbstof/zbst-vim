@@ -57,3 +57,6 @@
 [submodule "vimfiles/bundle/matchit"]
 	path = vimfiles/bundle/matchit
 	url = git://github.com/Kris2k/matchit.git
+[submodule "vimfiles/bundle/xml.vim"]
+	path = vimfiles/bundle/xml.vim
+	url = git://github.com/vim-scripts/xml.vim.git

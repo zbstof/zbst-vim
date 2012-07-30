@@ -22,6 +22,7 @@
 [submodule "vimfiles/bundle/vim-autoclose"]
 	path = vimfiles/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
+    ignore = dirty
 [submodule "vimfiles/bundle/vim-fugitive"]
 	path = vimfiles/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -34,9 +35,17 @@
 [submodule "vimfiles/bundle/open-browser.vim"]
 	path = vimfiles/bundle/open-browser.vim
 	url = git://github.com/tyru/open-browser.vim.git
+    ignore = dirty
 [submodule "vimfiles/bundle/pyflakes-vim"]
 	path = vimfiles/bundle/pyflakes-vim
 	url = git://github.com/kevinw/pyflakes-vim.git
 [submodule "vimfiles/bundle/syntastic"]
 	path = vimfiles/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vimfiles/bundle/yankring"]
+	path = vimfiles/bundle/yankring
+	url = git://github.com/vim-scripts/YankRing.vim.git
+    ignore = dirty
+[submodule "vimfiles/bundle/vim-fuzzyfinder"]
+	path = vimfiles/bundle/vim-fuzzyfinder
+	url = git://github.com/vim-scripts/FuzzyFinder.git

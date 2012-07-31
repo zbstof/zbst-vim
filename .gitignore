@@ -1,11 +1,8 @@
+!.gitignore
 backup/*
 swap/*
 undo/*
-.netrwhist
-!.gitignore
-*.zip
 vim73/*
-README
 vimfiles/spell/*
-tags
-*tags
+.netrwhist
+*.zip

@@ -22,7 +22,7 @@
 [submodule "vimfiles/bundle/vim-autoclose"]
 	path = vimfiles/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
-    ignore = dirty
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-fugitive"]
 	path = vimfiles/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -35,7 +35,7 @@
 [submodule "vimfiles/bundle/open-browser.vim"]
 	path = vimfiles/bundle/open-browser.vim
 	url = git://github.com/tyru/open-browser.vim.git
-    ignore = dirty
+    ignore = untracked
 [submodule "vimfiles/bundle/pyflakes-vim"]
 	path = vimfiles/bundle/pyflakes-vim
 	url = git://github.com/kevinw/pyflakes-vim.git
@@ -45,21 +45,26 @@
 [submodule "vimfiles/bundle/yankring"]
 	path = vimfiles/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-fuzzyfinder"]
 	path = vimfiles/bundle/vim-fuzzyfinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-l9"]
 	path = vimfiles/bundle/vim-l9
 	url = https://github.com/vim-scripts/L9
+    ignore = untracked
 [submodule "vimfiles/bundle/bufkill"]
 	path = vimfiles/bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim
 [submodule "vimfiles/bundle/matchit"]
 	path = vimfiles/bundle/matchit
 	url = git://github.com/Kris2k/matchit.git
+    ignore = untracked
 [submodule "vimfiles/bundle/xml.vim"]
 	path = vimfiles/bundle/xml.vim
 	url = git://github.com/vim-scripts/xml.vim.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-colors-solarized"]
 	path = vimfiles/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git

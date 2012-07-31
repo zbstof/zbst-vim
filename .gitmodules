@@ -1,70 +1,75 @@
-[submodule "vimfiles/bundle/vim-pathogen"]
-	path = vimfiles/bundle/vim-pathogen
+[submodule "bundle/vim-pathogen"]
+	path = bundle/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "vimfiles/bundle/vim-ps1"]
-	path = vimfiles/bundle/vim-ps1
+[submodule "bundle/vim-ps1"]
+	path = bundle/vim-ps1
 	url = git://github.com/PProvost/vim-ps1.git
-[submodule "vimfiles/bundle/vim-surround"]
-	path = vimfiles/bundle/vim-surround
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vimfiles/bundle/gundo"]
-	path = vimfiles/bundle/gundo
+[submodule "bundle/gundo"]
+	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vimfiles/bundle/neocomplcache"]
-	path = vimfiles/bundle/neocomplcache
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
-[submodule "vimfiles/bundle/supertab"]
-	path = vimfiles/bundle/supertab
+[submodule "bundle/supertab"]
+	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "vimfiles/bundle/nerdcommenter"]
-	path = vimfiles/bundle/nerdcommenter
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vimfiles/bundle/vim-autoclose"]
-	path = vimfiles/bundle/vim-autoclose
+[submodule "bundle/vim-autoclose"]
+	path = bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
     ignore = untracked
-[submodule "vimfiles/bundle/vim-fugitive"]
-	path = vimfiles/bundle/vim-fugitive
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vimfiles/bundle/tagbar"]
-	path = vimfiles/bundle/tagbar
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "vimfiles/bundle/vim-colorschemes"]
-	path = vimfiles/bundle/vim-colorschemes
+[submodule "bundle/vim-colorschemes"]
+	path = bundle/vim-colorschemes
 	url = git://github.com/flazz/vim-colorschemes.git
-[submodule "vimfiles/bundle/open-browser.vim"]
-	path = vimfiles/bundle/open-browser.vim
+[submodule "bundle/open-browser.vim"]
+	path = bundle/open-browser.vim
 	url = git://github.com/tyru/open-browser.vim.git
     ignore = untracked
-[submodule "vimfiles/bundle/pyflakes-vim"]
-	path = vimfiles/bundle/pyflakes-vim
+[submodule "bundle/pyflakes-vim"]
+	path = bundle/pyflakes-vim
 	url = git://github.com/kevinw/pyflakes-vim.git
-[submodule "vimfiles/bundle/syntastic"]
-	path = vimfiles/bundle/syntastic
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vimfiles/bundle/yankring"]
-	path = vimfiles/bundle/yankring
+[submodule "bundle/yankring"]
+	path = bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
-    ignore = untracked
-[submodule "vimfiles/bundle/vim-fuzzyfinder"]
-	path = vimfiles/bundle/vim-fuzzyfinder
+	ignore = untracked
+	ignore = dirty
+[submodule "bundle/vim-fuzzyfinder"]
+	path = bundle/vim-fuzzyfinder
 	url = git://github.com/vim-scripts/FuzzyFinder.git
     ignore = untracked
-[submodule "vimfiles/bundle/vim-l9"]
-	path = vimfiles/bundle/vim-l9
+[submodule "bundle/vim-l9"]
+	path = bundle/vim-l9
 	url = https://github.com/vim-scripts/L9
     ignore = untracked
-[submodule "vimfiles/bundle/bufkill"]
-	path = vimfiles/bundle/bufkill
+[submodule "bundle/bufkill"]
+	path = bundle/bufkill
 	url = https://github.com/vim-scripts/bufkill.vim
-[submodule "vimfiles/bundle/matchit"]
-	path = vimfiles/bundle/matchit
+[submodule "bundle/matchit"]
+	path = bundle/matchit
 	url = git://github.com/Kris2k/matchit.git
     ignore = untracked
-[submodule "vimfiles/bundle/xml.vim"]
-	path = vimfiles/bundle/xml.vim
+[submodule "bundle/xml.vim"]
+	path = bundle/xml.vim
 	url = git://github.com/vim-scripts/xml.vim.git
     ignore = untracked
-[submodule "vimfiles/bundle/vim-colors-solarized"]
-	path = vimfiles/bundle/vim-colors-solarized
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+	ignore = dirty
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git

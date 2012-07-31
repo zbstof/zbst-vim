@@ -14,9 +14,8 @@ set guicursor+=a:blinkon0
 set mouse=a
 
 "Activate Pathogen
-source $VIM/vimfiles/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+source $VIM/bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('$VIM/bundle')
 
 "Change Leader key
 let mapleader = ","

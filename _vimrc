@@ -4,7 +4,7 @@ set nocompatible
 set langmenu=en_US.UTF-8
 "sets the language of the messages / ui (Vim)
 language messages en
-"Remove ALL autocommands for the current group.
+"Remove ALL autocommands for the current group
 autocmd!
 "automatically use system clipboard
 set clipboard=unnamed
@@ -22,7 +22,7 @@ let mapleader = ","
 "Change default directory
 cd ~
 "Manual folding (zf)
-set foldmethod=manual
+set foldmethod=marker
 
 "Set correct Unicode processing
 if has("multi_byte")
@@ -34,6 +34,7 @@ if has("multi_byte")
     set fileencodings=utf8,uft-16le,cp1251
 endif
 
+" {{{ GUI CLEANUP
 "Makes gui the way I like it
 if has("gui_running")
     "colorscheme zenburn
@@ -56,6 +57,8 @@ if has("gui_running")
     set guifont=Consolas:h10
 endif
 
+" }}}
+
 "Set switching language on <C-^>
 set keymap=ukrainian-jcukenwin
 set iminsert=0
@@ -65,8 +68,6 @@ highlight lCursor guifg=NONE guibg=Cyan
 "Maximize window on start
 autocmd GUIEnter * simalt ~x
 
-"enable syntax highlighting
-syntax on
 "use more prompt
 set more
 "watch for file changes
@@ -92,6 +93,8 @@ set updatecount=100
 "remember history
 set history=200
 
+"enable syntax highlighting
+syntax on
 "Enable filetype detection
 filetype on
 "Enable filetype-specific indenting
@@ -99,7 +102,7 @@ filetype indent on
 "Enable filetype-specific plugins
 filetype plugin on
 
-" AUTO-COMPLETION
+"{{{ AUTO-COMPLETION
 
 "Enable omni-completion
 set omnifunc=syntaxcomplete#Complete
@@ -116,7 +119,8 @@ set wildignore+=*.o,*.obj,.git
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
-" SEARCHING
+" }}}
+"{{{ SEARCHING
 
 "incremental search
 set incsearch
@@ -137,7 +141,8 @@ set gdefault
 "ignore all whitespace and sync
 set diffopt=filler,iwhite
 
-" BACKUP
+" }}}
+"{{{ BACKUP
 
 "Set fixed backup/swap/undo directory
 "set backupdir=$VIM\\backup
@@ -148,11 +153,13 @@ set noswapfile
 set undodir=$VIM\\undo
 set undofile
 
-" COMMON MISSPELLINGS
+" }}}
+"{{{ COMMON MISSPELLINGS
 
 abbr teh the
 
-" INDENTATION
+" }}}
+"{{{ INDENTATION
 
 "Spaces are inserted instead of tabs
 set expandtab
@@ -184,7 +191,8 @@ set cursorline
 "set relativenumber
 
 
-" QUICK EDITS
+" }}}
+"{{{ QUICK EDITS
 
 "Edit vimrc in current buffer
 nnoremap <Leader>v :edit $MYVIMRC<CR>
@@ -204,7 +212,8 @@ nnoremap <Leader>fd :let @*=expand("%:h")<CR>
 "Reload vimrc file
 nnoremap <Leader>m :source $MYVIMRC<CR>
 
-" MAPPINGS
+" }}}
+"{{{ MAPPINGS
 
 "Toggle line numbers
 nnoremap <F11> :set invnumber<CR>
@@ -252,7 +261,8 @@ nnoremap : ;
 "Make delete inner word also delete space after it
 nmap diw bdw
 
-" WINDOWS-LIKE BEHAVIOR
+" }}}
+"{{{ WINDOWS-LIKE BEHAVIOR
 
 "Make Ctrl+Backspace delete previous word in Insert mode
 inoremap <C-BS> <C-W>
@@ -261,7 +271,8 @@ nnoremap <C-a> ggVG
 "Some quick switching
 nnoremap <C-Tab> :b#<CR>
 
-" PLUGIN CONFIGURATION
+" }}}
+"{{{ PLUGIN CONFIGURATION
 
 "Enable fuf mru mode
 let g:fuf_modesDisable = [ 'mrucmd', ]
@@ -280,8 +291,11 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 "Add fancy symbols in status line (need --with-features=big)
 "let g:Powerline_symbols = 'fancy'
+"Use short path name
+let g:Powerline_stl_path_style = 'short'
 
-" PLUGIN MAPPINGS
+" }}}
+"{{{ PLUGIN MAPPINGS
 
 "Map graphical undo toggle
 nnoremap <F5> :GundoToggle<CR>
@@ -303,7 +317,8 @@ let g:yankring_replace_n_pkey = '<Leader>['
 let g:yankring_replace_n_nkey = '<Leader>]'
 nnoremap <Leader>y :YRShow<CR>
 
-" MISC
+" }}}
+"{{{ MISC
 
 "Set off the other paren
 highlight MatchParen ctermbg=4
@@ -312,9 +327,10 @@ highlight MatchParen ctermbg=4
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
-set fileformats=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
+set fileformats=unix,dos,mac        " Try recognizing dos, unix, and mac line endings
 
-" PYTHON
+" }}}
+" {{{ PYTHON
 
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
@@ -322,6 +338,8 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 
 " OpenBrowser
 
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
+let g:netrw_nogx = 1 " disable netrw's gx mapping
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" }}}

@@ -269,6 +269,15 @@ let g:SuperTabLongestEnhanced = 1
 let g:SuperTabDefaultCompletionType = "context"
 "Tagbar configuration
 let g:tagbar_usearrows = 1
+let g:tagbar_sort = 0
+"Set path to Exuberant cTags
+"set g:tagbar_ctags_bin =
+"Javascript indent configuration
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+"Add fancy symbols in status line (need --with-features=big)
+"let g:Powerline_symbols = 'fancy'
 
 " PLUGIN MAPPINGS
 

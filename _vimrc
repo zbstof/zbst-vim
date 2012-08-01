@@ -53,7 +53,7 @@ if has("gui_running")
     set guioptions-=m
 
     "Consolas is AWESOME
-    set guifont=Consolas:h11
+    set guifont=Consolas:h10
 endif
 
 "Set switching language on <C-^>
@@ -227,6 +227,8 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <Leader>W :%s/\s\+$//<CR>
 "Change encoding to utf-16le (for log files)
 nnoremap <Leader>log :e ++enc=utf-16le<CR>
+"Search pharase under selection
+vnoremap * y/<C-R>*<CR>N
 
 "Up and down are more logical with g - wrapped lines count
 nnoremap k gk
@@ -291,6 +293,11 @@ nnoremap <Leader>ls :FufBuffer<CR>
 nnoremap <Leader>lf :FufCoverageFile<CR>
 "fuf mapping - most recently used files
 nnoremap <Leader>lr :FufMruFile<CR>
+"fuf mapping - open bookmarked files
+nnoremap <Leader>lb :FufBookmarkFile<CR>
+"fuf mapping - add file to bookmarks
+nnoremap <Leader>la :FufBookmarkFileAdd<CR>
+
 "YankRing
 let g:yankring_replace_n_pkey = '<Leader>['
 let g:yankring_replace_n_nkey = '<Leader>]'

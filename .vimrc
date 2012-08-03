@@ -34,39 +34,11 @@ if has("multi_byte")
     set fileencodings=utf8,uft-16le,cp1251
 endif
 
-" {{{ GUI CLEANUP
-"Makes gui the way I like it
-if has("gui_running")
-    "colorscheme zenburn
-
-    set background=dark
-    colorscheme solarized
-    "Muck with gvim interface
-    "remove toolbar
-    set guioptions-=T
-    "Remove right scrollbar
-    set guioptions-=r
-    set guioptions-=R
-    "remove left scrollbar
-    set guioptions-=l
-    set guioptions-=L
-    "remove menu bar
-    set guioptions-=m
-
-    "Consolas is AWESOME
-    set guifont=Consolas:h10
-endif
-
-" }}}
-
 "Set switching language on <C-^>
 set keymap=ukrainian-jcukenwin
 set iminsert=0
 set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
-
-"Maximize window on start
-autocmd GUIEnter * simalt ~x
+highlight lCursor guifg=NONE guibg=Green
 
 "use more prompt
 set more
@@ -102,6 +74,33 @@ filetype indent on
 "Enable filetype-specific plugins
 filetype plugin on
 
+" {{{ GUI CLEANUP
+"Makes gui the way I like it
+if has("gui_running")
+    "colorscheme zenburn
+
+    set background=dark
+    colorscheme solarized
+    "Muck with gvim interface
+    "remove toolbar
+    set guioptions-=T
+    "Remove right scrollbar
+    set guioptions-=r
+    set guioptions-=R
+    "remove left scrollbar
+    set guioptions-=l
+    set guioptions-=L
+    "remove menu bar
+    set guioptions-=m
+
+    "Consolas is AWESOME
+    set guifont=Consolas:h10
+endif
+
+"Maximize window on start
+autocmd GUIEnter * simalt ~x
+
+" }}}
 "{{{ AUTO-COMPLETION
 
 "Enable omni-completion
@@ -145,12 +144,12 @@ set diffopt=filler,iwhite
 "{{{ BACKUP
 
 "Set fixed backup/swap/undo directory
-"set backupdir=$VIM\\backup
+"set backupdir=$VIM/backup
 set nobackup
 set nowritebackup
-"set directory=$VIM\\swap
+"set directory=$VIM/swap
 set noswapfile
-set undodir=$VIM\\undo
+set undodir=$VIM/undo
 set undofile
 
 " }}}
@@ -195,11 +194,11 @@ set cursorline
 "{{{ QUICK EDITS
 
 "Edit vimrc in current buffer
-nnoremap <Leader>v :edit $MYVIMRC<CR>
+nnoremap <Leader>v :edit $VIM/.vimrc<CR>
 "edit hosts file (should run under Admin)
-nnoremap <Leader>h :edit C:\Windows\System32\drivers\etc\hosts<CR>
+nnoremap <Leader>h :edit C:/Windows/System32/drivers/etc/hosts<CR>
 "edit my personal notes file
-nnoremap <Leader>n :edit $Dropbox\Notes.txt<CR>
+nnoremap <Leader>n :edit $Dropbox/Notes.txt<CR>
 
 "change path to current directory
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
@@ -210,15 +209,13 @@ nnoremap <Leader>fp :let @*=expand("%:p")<CR>
 "Get directory of file (tail) in clipboard
 nnoremap <Leader>fd :let @*=expand("%:h")<CR>
 "Reload vimrc file
-nnoremap <Leader>m :source $MYVIMRC<CR>
+nnoremap <Leader>m :source $VIM/.vimrc<CR>
 
 " }}}
 "{{{ MAPPINGS
 
 "Toggle line numbers
 nnoremap <F11> :set invnumber<CR>
-"Map annoying ex-mode to visual block
-nnoremap Q <C-q>
 "toggle line-wrap
 nnoremap <F12> :set wrap!<CR>
 "Toggle spelling
@@ -238,6 +235,8 @@ nnoremap <Leader>W :%s/\s\+$//<CR>
 nnoremap <Leader>log :e ++enc=utf-16le<CR>
 "Search pharase under selection
 vnoremap * y/<C-R>*<CR>N
+"Count expression under search
+nnoremap <Leader>z :%s///n<CR>
 
 "Up and down are more logical with g - wrapped lines count
 nnoremap k gk
@@ -261,6 +260,15 @@ nnoremap : ;
 "Make delete inner word also delete space after it
 nmap diw bdw
 
+"Disable some mappings
+"F1 for help; :help is more useful
+nnoremap <F1> <nop>
+"Q to start ex mode; intended to start recording a macro with q
+nnoremap Q <nop>
+"K to bring up a man page for the word under the cursor
+"nnoremap K <nop>
+"Consistent yanking
+nnoremap Y y$
 " }}}
 "{{{ WINDOWS-LIKE BEHAVIOR
 

@@ -255,8 +255,8 @@ noremap <C-l> <C-w>l
 "Make * just highlight current word
 nnoremap * *N
 "Swap ; and : in Normal mode
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 "Make delete inner word also delete space after it
 nmap diw bdw
 

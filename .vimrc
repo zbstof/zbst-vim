@@ -337,6 +337,10 @@ set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set fileformats=unix,dos,mac        " Try recognizing dos, unix, and mac line endings
 
+"Authomatic foling for xml files
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+au FileType jsp setlocal foldmethod=syntax
 " }}}
 " {{{ PYTHON
 

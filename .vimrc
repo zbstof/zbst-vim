@@ -1,5 +1,4 @@
-"Vim, not vi
-set nocompatible
+"Vim, not vi set nocompatible
 "sets the language of the menu (gvim)
 set langmenu=en_US.UTF-8
 "sets the language of the messages / ui (Vim)
@@ -14,8 +13,43 @@ set guicursor+=a:blinkon0
 set mouse=a
 
 "Activate Pathogen
-source $VIM/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect('$VIM/bundle')
+"source $VIM/bundle/vim-pathogen/autoload/pathogen.vim
+"call pathogen#infect('$VIM/bundle')
+
+"Activate Vundle
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Plugins {{{
+Bundle "YankRing.vim"
+Bundle "L9"
+Bundle "xml.vim"
+Bundle "FuzzyFinder"
+Bundle "bufkill"
+Bundle "altercation/vim-colors-solarized"
+Bundle "PProvost/vim-ps1"
+Bundle "tpope/vim-surround"
+Bundle "sjl/gundo.vim"
+Bundle "Shougo/neocomplcache"
+Bundle "ervandew/supertab"
+Bundle "scrooloose/nerdcommenter"
+Bundle "Townk/vim-autoclose"
+Bundle "majutsushi/tagbar"
+Bundle "tyru/open-browser.vim"
+Bundle "kevinw/pyflakes-vim"
+Bundle "scrooloose/syntastic"
+Bundle "Kris2k/matchit"
+Bundle "klen/python-mode"
+Bundle "Rip-Rip/clang_complete"
+Bundle "kien/ctrlp.vim"
+Bundle "scrooloose/nerdtree"
+Bundle "msanders/snipm"
+Bundle "Lokaltog/vim-powerline"
+Bundle "pangloss/vim-javascript"
+Bundle "mattn/webapi-vim"
+Bundle "othree/html5.vim"
+Bundle "derekwyatt/vim-scala"
+"}}}
 
 "Change Leader key
 let mapleader = ","

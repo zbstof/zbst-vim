@@ -21,14 +21,17 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Plugins {{{
-Bundle "YankRing.vim"
+Bundle "gmarik/vundle"
+Bundle "yankstack"
 Bundle "L9"
 Bundle "xml.vim"
 Bundle "FuzzyFinder"
-Bundle "bufkill"
+Bundle "bufkill.vim"
 Bundle "altercation/vim-colors-solarized"
 Bundle "PProvost/vim-ps1"
 Bundle "tpope/vim-surround"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-rails"
 Bundle "sjl/gundo.vim"
 Bundle "Shougo/neocomplcache"
 Bundle "ervandew/supertab"
@@ -36,19 +39,24 @@ Bundle "scrooloose/nerdcommenter"
 Bundle "Townk/vim-autoclose"
 Bundle "majutsushi/tagbar"
 Bundle "tyru/open-browser.vim"
-Bundle "kevinw/pyflakes-vim"
 Bundle "scrooloose/syntastic"
 Bundle "Kris2k/matchit"
 Bundle "klen/python-mode"
 Bundle "Rip-Rip/clang_complete"
 Bundle "kien/ctrlp.vim"
+let g:ctrlp_map = '<C-P>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 Bundle "scrooloose/nerdtree"
-Bundle "msanders/snipm"
+"Bundle "msanders/snipmate.vim"
 Bundle "Lokaltog/vim-powerline"
 Bundle "pangloss/vim-javascript"
 Bundle "mattn/webapi-vim"
 Bundle "othree/html5.vim"
 Bundle "derekwyatt/vim-scala"
+Bundle "mattn/gist-vim"
+"Bundle "tpope/vim-unimpaired"
+Bundle "mileszs/ack.vim"
 "}}}
 
 "Change Leader key
@@ -375,6 +383,12 @@ set fileformats=unix,dos,mac        " Try recognizing dos, unix, and mac line en
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 au FileType jsp setlocal foldmethod=syntax
+
+"Fix slow syntax highlighting
+"set nocursorcolumn
+"set nocursorline
+"syntax sync minlines=256
+
 " }}}
 " {{{ PYTHON
 

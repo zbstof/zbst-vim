@@ -22,41 +22,70 @@ call vundle#rc()
 
 " Plugins {{{
 Bundle "gmarik/vundle"
-Bundle "yankstack"
+
 Bundle "L9"
 Bundle "xml.vim"
-Bundle "FuzzyFinder"
 Bundle "bufkill.vim"
+
+Bundle "FuzzyFinder"
+"FuzzyFinder mapping - open buffers
+nnoremap <Leader>ls :FufBuffer<CR>
+"fuf mapping - all files in current directory
+nnoremap <Leader>lf :FufCoverageFile<CR>
+"fuf mapping - most recently used files
+nnoremap <Leader>lr :FufMruFile<CR>
+"fuf mapping - open bookmarked files
+nnoremap <Leader>lb :FufBookmarkFile<CR>
+"fuf mapping - add file to bookmarks
+nnoremap <Leader>la :FufBookmarkFileAdd<CR>
+
+Bundle "maxbrunsfeld/vim-yankstack"
+"YankStack
+nnoremap <Leader>y :Yanks<CR>
+
 Bundle "altercation/vim-colors-solarized"
 Bundle "PProvost/vim-ps1"
 Bundle "tpope/vim-surround"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-rails"
+
 Bundle "sjl/gundo.vim"
+"Map graphical undo toggle
+nnoremap <F5> :GundoToggle<CR>
+
 Bundle "Shougo/neocomplcache"
 Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdcommenter"
 Bundle "Townk/vim-autoclose"
+
 Bundle "majutsushi/tagbar"
+"Map tagbar outline toggle
+nnoremap <F8> :TagbarToggle<CR>
+
 Bundle "tyru/open-browser.vim"
+" OpenBrowser
+let g:netrw_nogx = 1 " disable netrw's gx mapping
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 Bundle "scrooloose/syntastic"
 Bundle "Kris2k/matchit"
 Bundle "klen/python-mode"
 Bundle "Rip-Rip/clang_complete"
+
 Bundle "kien/ctrlp.vim"
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/nerdtree"
-"Bundle "msanders/snipmate.vim"
+Bundle "msanders/snipmate.vim"
 Bundle "Lokaltog/vim-powerline"
-Bundle "pangloss/vim-javascript"
 Bundle "mattn/webapi-vim"
 Bundle "othree/html5.vim"
 Bundle "derekwyatt/vim-scala"
+Bundle "bronson/vim-visual-star-search"
 Bundle "mattn/gist-vim"
-"Bundle "tpope/vim-unimpaired"
 Bundle "mileszs/ack.vim"
+
 "}}}
 
 "Change Leader key
@@ -157,8 +186,6 @@ set pumheight=6             " Keep a small completion window
 "don't care about binary/temporary files
 set wildignore=*.swp,*.pyo,*.pyc,*.class
 set wildignore+=*.o,*.obj,.git
-set wildignore+=eggs/**
-set wildignore+=*.egg-info/**
 
 " }}}
 "{{{ SEARCHING
@@ -276,7 +303,7 @@ nnoremap <Leader>W :%s/\s\+$//<CR>
 "Change encoding to utf-16le (for log files)
 nnoremap <Leader>log :e ++enc=utf-16le<CR>
 "Search pharase under selection
-vnoremap * y/<C-R>*<CR>N
+"vnoremap * y/<C-R>*<CR>N
 "Count expression under search
 nnoremap <Leader>z :%s///n<CR>
 
@@ -345,29 +372,6 @@ let g:html_indent_style1 = "inc"
 let g:Powerline_stl_path_style = 'short'
 
 " }}}
-"{{{ PLUGIN MAPPINGS
-
-"Map graphical undo toggle
-nnoremap <F5> :GundoToggle<CR>
-"Map tagbar outline toggle
-nnoremap <F8> :TagbarToggle<CR>
-"FuzzyFinder mapping - open buffers
-nnoremap <Leader>ls :FufBuffer<CR>
-"fuf mapping - all files in current directory
-nnoremap <Leader>lf :FufCoverageFile<CR>
-"fuf mapping - most recently used files
-nnoremap <Leader>lr :FufMruFile<CR>
-"fuf mapping - open bookmarked files
-nnoremap <Leader>lb :FufBookmarkFile<CR>
-"fuf mapping - add file to bookmarks
-nnoremap <Leader>la :FufBookmarkFileAdd<CR>
-
-"YankRing
-let g:yankring_replace_n_pkey = '<Leader>['
-let g:yankring_replace_n_nkey = '<Leader>]'
-nnoremap <Leader>y :YRShow<CR>
-
-" }}}
 "{{{ MISC
 
 "Set off the other paren
@@ -383,12 +387,6 @@ set fileformats=unix,dos,mac        " Try recognizing dos, unix, and mac line en
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 au FileType jsp setlocal foldmethod=syntax
-
-"Fix slow syntax highlighting
-"set nocursorcolumn
-"set nocursorline
-"syntax sync minlines=256
-
 " }}}
 " {{{ PYTHON
 
@@ -396,10 +394,5 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
-" OpenBrowser
-
-let g:netrw_nogx = 1 " disable netrw's gx mapping
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 
 " }}}

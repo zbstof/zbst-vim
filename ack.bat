@@ -1,0 +1,1 @@
+@perl ack-standalone.pl %*

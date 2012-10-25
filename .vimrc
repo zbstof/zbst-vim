@@ -1,4 +1,5 @@
-"Vim, not vi set nocompatible
+"Vim, not vi 
+set nocompatible
 "sets the language of the menu (gvim)
 set langmenu=en_US.UTF-8
 "sets the language of the messages / ui (Vim)
@@ -15,6 +16,9 @@ set mouse=a
 "Activate Pathogen
 "source $VIM/bundle/vim-pathogen/autoload/pathogen.vim
 "call pathogen#infect('$VIM/bundle')
+"
+"Change Leader key
+let mapleader = ","
 
 "Activate Vundle
 set runtimepath+=~/.vim/bundle/vundle/
@@ -22,10 +26,6 @@ call vundle#rc()
 
 " Plugins {{{
 Bundle "gmarik/vundle"
-
-Bundle "L9"
-Bundle "xml.vim"
-Bundle "bufkill.vim"
 
 Bundle "FuzzyFinder"
 "FuzzyFinder mapping - open buffers
@@ -38,27 +38,27 @@ nnoremap <Leader>lr :FufMruFile<CR>
 nnoremap <Leader>lb :FufBookmarkFile<CR>
 "fuf mapping - add file to bookmarks
 nnoremap <Leader>la :FufBookmarkFileAdd<CR>
-
-Bundle "maxbrunsfeld/vim-yankstack"
-"YankStack
-nnoremap <Leader>y :Yanks<CR>
-
-Bundle "altercation/vim-colors-solarized"
-Bundle "PProvost/vim-ps1"
-Bundle "tpope/vim-surround"
+"Enable fuf mru mode
+let g:fuf_modesDisable = [ 'mrucmd', ]
 
 Bundle "sjl/gundo.vim"
 "Map graphical undo toggle
 nnoremap <F5> :GundoToggle<CR>
 
-Bundle "Shougo/neocomplcache"
 Bundle "ervandew/supertab"
-Bundle "scrooloose/nerdcommenter"
-Bundle "Townk/vim-autoclose"
+"Enable longest common match
+let g:SuperTabLongestEnhanced = 1
+"Enable context autocomplete
+let g:SuperTabDefaultCompletionType = "context"
 
 Bundle "majutsushi/tagbar"
 "Map tagbar outline toggle
 nnoremap <F8> :TagbarToggle<CR>
+"Tagbar configuration
+let g:tagbar_usearrows = 1
+let g:tagbar_sort = 0
+"Set path to Exuberant cTags
+"set g:tagbar_ctags_bin =
 
 Bundle "tyru/open-browser.vim"
 " OpenBrowser
@@ -66,30 +66,44 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-Bundle "scrooloose/syntastic"
-Bundle "Kris2k/matchit"
-Bundle "klen/python-mode"
-Bundle "Rip-Rip/clang_complete"
-
 Bundle "kien/ctrlp.vim"
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+Bundle "Lokaltog/vim-powerline"
+"Add fancy symbols in status line (need --with-features=big)
+"let g:Powerline_symbols = 'fancy'
+"Use short path name
+let g:Powerline_stl_path_style = 'short'
+call Pl#Theme#RemoveSegment('fugitive:branch')
+
+Bundle "L9"
+Bundle "xml.vim"
+Bundle "bufkill.vim"
+
+Bundle "Townk/vim-autoclose"
+Bundle "scrooloose/syntastic"
+Bundle "scrooloose/nerdcommenter"
+Bundle "Kris2k/matchit"
+Bundle "klen/python-mode"
+Bundle "Rip-Rip/clang_complete"
+Bundle "altercation/vim-colors-solarized"
+Bundle "PProvost/vim-ps1"
+Bundle "tpope/vim-surround"
+Bundle "Shougo/neocomplcache"
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/nerdtree"
 Bundle "msanders/snipmate.vim"
-Bundle "Lokaltog/vim-powerline"
 Bundle "mattn/webapi-vim"
 Bundle "othree/html5.vim"
 Bundle "derekwyatt/vim-scala"
 Bundle "bronson/vim-visual-star-search"
 Bundle "mattn/gist-vim"
 Bundle "mileszs/ack.vim"
-
+Bundle "tpope/vim-unimpaired"
+Bundle 'hexman.vim'
 "}}}
 
-"Change Leader key
-let mapleader = ","
 "Change default directory
 cd ~
 "Manual folding (zf)
@@ -321,21 +335,26 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+"Easy window movement
+noremap <Leader>wj <C-w><S-j>
+noremap <Leader>wh <C-w><S-h>
+noremap <Leader>wk <C-w><S-k>
+noremap <Leader>wl <C-w><S-l>
 "Make * just highlight current word
 nnoremap * *N
 "Swap ; and : in Normal mode
 "nnoremap ; :
 "nnoremap : ;
 "Make delete inner word also delete space after it
-nmap diw bdw
+nmap diw ebdw
 
 "Disable some mappings
 "F1 for help; :help is more useful
 nnoremap <F1> <nop>
 "Q to start ex mode; intended to start recording a macro with q
 nnoremap Q <nop>
-"K to bring up a man page for the word under the cursor
-"nnoremap K <nop>
+"disable K to bring up a man page for the word under the cursor
+nnoremap K <nop>
 "Consistent yanking
 nnoremap Y y$
 " }}}
@@ -345,31 +364,19 @@ nnoremap Y y$
 inoremap <C-BS> <C-W>
 "Set <C-a> to "Select All"
 nnoremap <C-a> ggVG
+"Set Alt-C/Alt-X to increment/decrement numbers
+nnoremap <A-a> <C-a>
+nnoremap <A-x> <C-x>
 "Some quick switching
 nnoremap <C-Tab> :b#<CR>
 
 " }}}
 "{{{ PLUGIN CONFIGURATION
 
-"Enable fuf mru mode
-let g:fuf_modesDisable = [ 'mrucmd', ]
-"Enable longest common match
-let g:SuperTabLongestEnhanced = 1
-"Enable context autocomplete
-let g:SuperTabDefaultCompletionType = "context"
-"Tagbar configuration
-let g:tagbar_usearrows = 1
-let g:tagbar_sort = 0
-"Set path to Exuberant cTags
-"set g:tagbar_ctags_bin =
-"Javascript indent configuration
+"Javascript indent configuration for html.vim
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
-"Add fancy symbols in status line (need --with-features=big)
-"let g:Powerline_symbols = 'fancy'
-"Use short path name
-let g:Powerline_stl_path_style = 'short'
 
 " }}}
 "{{{ MISC
@@ -389,10 +396,7 @@ au FileType xml setlocal foldmethod=syntax
 au FileType jsp setlocal foldmethod=syntax
 " }}}
 " {{{ PYTHON
-
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-
+"au FileType python set omnifunc=pythoncomplete#Complete
+"au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+"au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " }}}

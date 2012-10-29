@@ -5,11 +5,11 @@ If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     Break
 }
 
-$vundle = $env:home + "\.vim\bundle\vundle"
+$vundle = $env:userprofile + "\.vim\bundle\vundle"
 git clone git://github.com/gmarik/vundle.git $vundle
 vim +BundleInstall +qall
 
-$ftpath=$env:home + "\.vim\bundle\xml.vim\ftplugin"
+$ftpath = $env:userprofile + "\.vim\bundle\xml.vim\ftplugin"
 ln -v $ftpath\xml.vim $ftpath\html.vim
 ln -v $ftpath\xml.vim $ftpath\xhtml.vim
 ln -v $ftpath\xml.vim $ftpath\jsp.vim
